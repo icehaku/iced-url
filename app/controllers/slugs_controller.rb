@@ -5,23 +5,19 @@ class SlugsController < ApplicationController
     @slug = Slug.new
   end
 
+  # I could use a flash/notice to have a better feedback here,
+  # but I'll just keep it super simple
   def create
     @slug = Slug.new(slug_params)
 
-    respond_to do |format|
-      if @slug.save
-        format.html { redirect_to slug_stats_url(@slug.short_url), notice: "Slug created!" }
-        format.json { render :stats, status: :created, location: @slug }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @slug.errors, status: :unprocessable_entity }
-      end
+    if @slug.save
+      redirect_to slug_stats_url(@slug.short_url)
+    else
+      render :new, status: :unprocessable_entity
     end
   end
 
-  def stats
-    raise "stats"
-  end
+  def stats;end
 
   def navigate
     raise "navigate"
