@@ -10,10 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_18_141819) do
+ActiveRecord::Schema.define(version: 2021_09_18_181402) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "clicks", force: :cascade do |t|
+    t.bigint "slug_id", null: false
+    t.text "remote_ip"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["slug_id"], name: "index_clicks_on_slug_id"
+  end
 
   create_table "slugs", force: :cascade do |t|
     t.text "short_url", null: false
@@ -22,4 +30,5 @@ ActiveRecord::Schema.define(version: 2021_09_18_141819) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "clicks", "slugs"
 end
