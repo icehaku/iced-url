@@ -1,16 +1,16 @@
-<h3> Total Clicks: <%= @clicks.count %></h3>
+<h3> <%= t('views.slug.stats.title') %>: <%= @clicks.count %></h3>
 
 <p>
-  <strong> short url: </strong>
-  <%= @slug.short_url %>
+  <strong> <%= t('models.slug.short_url') %>: </strong>
+  <%= link_to slug_navigate_path(@slug.short_url), slug_navigate_path(@slug.short_url) %>
 </p>
 
 <p>
-  <strong> target url: </strong>
-  <%= @slug.target_url %>
+  <strong> <%= t('models.slug.target_url') %>: </strong>
+  <%= link_to t('models.slug.target_url'), @slug.target_url %>
 </p>
 
-<h4> clicks list </h4>
+<h4> <%= t('views.slug.stats.clicks_list_title') %> </h4>
 
 <% @clicks.each do |click| %>
   <p> <%= click.remote_ip %> </p>

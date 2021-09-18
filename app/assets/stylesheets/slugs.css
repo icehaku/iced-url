@@ -1,0 +1,38 @@
+.main-content {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.box-main {
+  background: #ffafcc;
+  color: white;
+  border: none !important;
+  outline: none;
+  border-radius: 2px;
+  box-sizing: border-box;
+  box-shadow: 5px 10px #cdb4db;
+}
+
+.main-title {
+  font-size: 2em;
+  width: 7.5em;
+  padding: 25px 25px;
+  margin: 10px 0 15px;
+}
+
+.main-field {
+  font-size: 2em;
+  width: 40em;
+  padding: 25px 25px;
+  margin: 10px 0 15px;
+}
+
+.main-btn {
+  font-size: 1.5em;
+  padding: 10px 15px;
+  border-radius: 2px;
+  float: right;
+}
