@@ -16,6 +16,10 @@ gem 'bootsnap', '>= 1.4.4', require: false
 
 group :development, :test do
   gem 'pry-rails'
+  gem 'rspec-rails', '~> 5.0.0'
+  gem 'factory_bot_rails'
+  gem 'faker'
+  gem 'rexml'
 end
 
 group :development do
@@ -24,12 +28,16 @@ group :development do
   gem 'listen', '~> 3.3'
   gem 'spring'
   gem 'bullet'
+  gem 'rails-controller-testing'
+  gem 'shoulda-matchers'
 end
 
 group :test do
   gem 'capybara', '>= 3.26'
   gem 'selenium-webdriver'
   gem 'webdrivers'
+  gem 'rails-controller-testing'
+  gem 'shoulda-matchers'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
