@@ -17,10 +17,14 @@ class SlugsController < ApplicationController
     end
   end
 
-  def stats;end
+  def stats
+    @clicks = @slug.clicks
+  end
 
   def navigate
-    raise "navigate"
+    Click.create(slug: @slug, remote_ip: request&.remote_ip)
+
+    redirect_to @slug.target_url
   end
 
   private

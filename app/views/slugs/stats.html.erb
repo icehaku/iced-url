@@ -1,9 +1,17 @@
+<h3> Total Clicks: <%= @clicks.count %></h3>
+
 <p>
-  <strong>Short url:</strong>
+  <strong> short url: </strong>
   <%= @slug.short_url %>
 </p>
 
 <p>
-  <strong>Target url:</strong>
+  <strong> target url: </strong>
   <%= @slug.target_url %>
 </p>
+
+<h4> clicks list </h4>
+
+<% @clicks.each do |click| %>
+  <p> <%= click.remote_ip %> </p>
+<% end %>
