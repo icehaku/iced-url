@@ -1,3 +1,8 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  root 'slugs#new'
+
+  resources :slugs, only: [:new, :create]
+
+  get '(/:short_url)', to: 'slugs#navigate', as: 'slug_navigate'
+  get '(/:short_url/stats)', to: 'slugs#stats', as: 'slug_stats'
 end
