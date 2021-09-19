@@ -1,6 +1,11 @@
  <div class="main-div">
+
   <div class="main-content">
     <%= form_with(model: @slug) do |form| %>
+      <% if @slug.errors.any? %>
+        <div class="box-main erro-btn"> <%= t('views.slug.new.invalid_error') %> </div>
+      <% end %>
+
       <div class="box-main main-title"> <%= t('views.slug.new.field_info') %> </div>
 
       <div>

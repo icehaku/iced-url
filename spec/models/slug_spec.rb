@@ -11,6 +11,10 @@ RSpec.describe Slug, type: :model do
   end
 
   describe "Factory" do
+    let(:http_response) {double("response", code: 200)}
+
+    before { allow(HTTParty).to receive(:get).and_return(http_response) }
+
     it { expect(build :slug).to be_a Slug }
     it { expect(build :slug).to be_valid }
   end

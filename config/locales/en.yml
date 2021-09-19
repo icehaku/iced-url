@@ -9,6 +9,7 @@ en:
       new:
         field_info: Lets make this
         submit_btn: small
+        invalid_error: "That URL was not valid =[. Let's try again."
       stats:
         title: SLUG clicks count
         clicks_list_title: List of Remote IP Clicks

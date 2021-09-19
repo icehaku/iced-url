@@ -36,3 +36,11 @@
   border-radius: 2px;
   float: right;
 }
+
+.erro-btn {
+  background: #e8719c;
+  font-size: 1.5em;
+  padding: 10px 15px;
+  border-radius: 2px;
+  float: right;
+}

@@ -13,7 +13,7 @@ class SlugsController < ApplicationController
     if @slug.save
       redirect_to slug_stats_url(@slug.short_url)
     else
-      render :new, status: :unprocessable_entity
+      render new_slug_path
     end
   end
 

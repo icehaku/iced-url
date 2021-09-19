@@ -2,7 +2,7 @@
 
 <p>
   <strong> <%= t('models.slug.short_url') %>: </strong>
-  <%= link_to slug_navigate_path(@slug.short_url), slug_navigate_path(@slug.short_url) %>
+  <%= link_to root_url.concat(@slug.short_url), slug_navigate_path(@slug.short_url) %>
 </p>
 
 <p>
